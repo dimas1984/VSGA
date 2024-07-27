@@ -6,4 +6,3 @@ require '../app/models/User.php';
 
 $controller = new HomeController();
 $controller->index();
-?>
