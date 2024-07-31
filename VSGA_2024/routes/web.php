@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\CRUDController;
+use App\Http\Controllers\PageControllerSatu;
+use App\Http\Controllers\pengajarController;
+use App\Http\Controllers\PhotoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -84,7 +88,45 @@ Route::get('tampil', function () {
     return view('tampil');
 })->name('tampil');
 
-Route::get('/pesandisini',function(){
-return '<h1> pesan disini </h1>';
+Route::get('/pesandisini', function () {
+    return '<h1> pesan disini </h1>';
 });
 Route::redirect('/contact-us', '/pesandisini');
+
+//prefix ========================================
+Route::get('/polinema/dosen', function () {
+    return "<h1> daftar nama dosen </h1>";
+});
+Route::get('/polinema/tendik', function () {
+    return "<h1> daftar nama tendik </h1>";
+});
+Route::get('/polinema/jurusan', function () {
+    return "<h1> daftar nama jurusan </h1>";
+});
+
+Route::prefix('/admin')->group(function () {
+    Route::get('/dosen', function () {
+        echo "<h1>Daftar dosen</h1>";
+    });
+    Route::get('/tendik', function () {
+        echo "<h1>Daftar tendik</h1>";
+    });
+    Route::get('/jurusan', function () {
+        echo "<h1>Daftar jurusan</h1>";
+    });
+});
+//==============================================
+
+Route::fallback(function(){
+    return "maaf,alamat ini tidak ditemukan";
+});
+
+
+Route::get('/daftar-dosen',[pengajarController::class,'daftarPengajar']);
+Route::get('/tabel-pengajar',[pengajarController::class,'tabelPengajar']);
+Route::get('/blog-pengajar',[pengajarController::class,'blogPengajar']);
+
+Route::get('pasar-buah',[PageControllerSatu::class,'satu']);
+
+// Route::resource('photo',[PhotoController::class]);
+
