@@ -128,5 +128,5 @@ Route::get('/blog-pengajar',[pengajarController::class,'blogPengajar']);
 
 Route::get('pasar-buah',[PageControllerSatu::class,'satu']);
 
-// Route::resource('photo',[PhotoController::class]);
+Route::resource('crud',CRUDController::class);
 
