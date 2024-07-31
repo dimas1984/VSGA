@@ -16,3 +16,75 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/hello', function () {
+    return 'hello VSGA';
+});
+
+Route::get('/word', function () {
+    return 'hello Dunia';
+});
+Route::get('/about', function () {
+    return 'NIM : 123456789';
+});
+
+
+Route::get('mahasiswa', function ($id) {
+});
+Route::post('mahasiswa', function ($id) {
+});
+Route::put('mahasiswa', function ($id) {
+});
+Route::delete('mahasiswa', function ($id) {
+});
+Route::get('mahasiswa/{id}', function ($id) {
+});
+Route::put('mahasiswa/{id}', function ($id) {
+});
+Route::delete('mahasiswa/{id}', function ($id) {
+});
+
+Route::get('/DTS', function () {
+    return view('dts');
+});
+
+
+Route::get('/DTS', function () {
+    return view('pengajar');
+});
+
+Route::get('VSGA', function () {
+    return View::make('pengajarVSGA');
+});
+
+Route::get('DTSMethodWith', function () {
+    return view('polinema.peserta')->with('peserta01', 'dina');
+});
+
+// Route::get('/', [App\Http\Controllers\PageController::class,'index']);?
+
+Route::get('/user/{name}', function ($name) {
+    return 'Nama saya ' . $name;
+});
+
+Route::get('/posts/{post}/{comment}', function ($post, $comment) {
+    return 'Pos ke-' . $post . " Komentar ke-: " . $comment;
+});
+
+Route::get('/user{name?}', function ($name = null) {
+    return 'Nama saya' . $name;
+});
+
+Route::get('/kodebarang/{jenis?}/{merek?}', function ($jk = 'k01', $mrk = 'nokia') {
+    return "kode barang $jk dan nama barang $mrk";
+});
+
+// Dalam file routes/web.php
+Route::get('tampil', function () {
+    return view('tampil');
+})->name('tampil');
+
+Route::get('/pesandisini',function(){
+return '<h1> pesan disini </h1>';
+});
+Route::redirect('/contact-us', '/pesandisini');
