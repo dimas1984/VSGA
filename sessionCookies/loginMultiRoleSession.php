@@ -11,7 +11,7 @@
     if ($rowcount>0) {
         session_start();
         $_SESSION['username'] = $username;
-        $_SESSION['status'] = login;
+        $_SESSION['role'] = $fechResult["role"];
     }
 
     if ($fechResult['role']=='admin') {
@@ -27,4 +27,3 @@
     }
 
     mysqli_close($connect);
-?>
