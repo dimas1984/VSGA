@@ -24,7 +24,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <input type="submit" name="login" values="Proses" size=""20>
+                        <input type="submit" name="login" values="proses" size=""20>
                     </td>
                 </tr>
             </table>

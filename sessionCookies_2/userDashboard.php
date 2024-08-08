@@ -8,7 +8,7 @@
 <body>
     <h1>selamat datang di halaman user</h1>
     <?php 
-    session_start();
+    //session_start();
     // if($_SESSION['status']=='login'){
     //     echo'<h1> selamat datang'.$_SESSION['username'].'</h1><br>';
     //     echo '<a href="sessionLogout.php">LOgout </a>';
@@ -22,9 +22,9 @@
     //  }
 
   
-    //session_start();
-    if($_SESSION['status']=="login"){
-        var_dump($_SESSION['status']);
+    session_start();
+    if($_SESSION['login']=="Submit"){
+        var_dump($_SESSION['login']);
         echo'<h1> selamat datang '.$_SESSION['username'].'</h1><br>';
         var_dump( $_SESSION['username']);
         echo '<a href="sessionLogout.php">LOgout </a>';
