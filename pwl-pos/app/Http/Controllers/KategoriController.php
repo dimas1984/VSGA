@@ -28,8 +28,8 @@ class KategoriController extends Controller
         // $data=DB::table('m_kategori')->where('kategori_kode','SNK')->delete();
         // return 'delete data berhasil, jumlah data yang terhapus '.$data.' baris';
 
-        // //menampilkan data
-        // $data=DB::table('m_kategori')->get();
-        // return view('kategori',['data'=>$data]);
+        //menampilkan data
+        $data=DB::table('m_kategori')->get();
+        return view('kategori',['data'=>$data]);
     }
 }
